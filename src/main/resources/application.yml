@@ -7,3 +7,18 @@ spring:
     mongodb:
       uri: mongodb://localhost:27017/microservices9090
       auto-index-creation: true
+  application:
+    name: USER_SERVICE
+
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true  # userService is a client which has given the permission
+      #to be registered to eureka server
+    service-url:
+      defaultZone: http://localhost:8761/eureka # This is the url of our eureka server, which will be used by
+        # the userService in order to get registered to hte eureka server
+
